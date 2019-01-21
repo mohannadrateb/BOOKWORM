@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+        <link rel="stylesheet" href='/css/bootstrap.css'/>
+        <link rel="stylesheet" href='/css/styles.css'/>
+
+<title> Profile  </title>
+</head>
+
+
+
+<body>
+        <% include ./partial-templates/nav  %>
+  
+
+        <h1 class="Anton"> Your opinion matters </h1>
+   
+
+        <div class="form-group">
+                
+                <textarea class="form-control"  id="post-text" placeholder="Type your post here "rows="5" id="post"></textarea>
+                <button type="submit" id="post"class="btn post-button  float-right" style="font-size:17px"  >Post </button>
+        </div>
+
+
+        <div id="older posts">
+
+
+                        
+           <h1 class="Anton"> Latest posts</h1>
+           <% for (var i=0; i< posts.length; i++){ %>
+                <br>
+                        <div class="card" style="width: 100%;">
+                                        
+                                        <div class="card-body">
+                                          <p class="card-text"><%= posts[i].post %></p>
+                                        </div>
+                        </div>
+
+
+                <%}%>
+                </br>
+<div class="result">
+
+
+
+</div>
+
+               
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+         
+
+        <script src='/js/jquery-3.3.1.min.js'></script> 
+        <script src='/js/popper.min.js'></script> 
+        <script src='/js/bootstrap.min.js'></script> 
+        
+        <script src='/scripts/profile.js'></script> 
+</body>
+
+</html>

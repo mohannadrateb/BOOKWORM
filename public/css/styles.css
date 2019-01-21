@@ -1,0 +1,178 @@
+@font-face {
+    font-family: 'Anton';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Anton Regular'), local('Anton-Regular'), url(font/1Ptgg87LROyAm3K8-C8CSKlvPfE.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Anton';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Anton Regular'), local('Anton-Regular'), url(font/1Ptgg87LROyAm3K9-C8CSKlvPfE.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Anton';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Anton Regular'), local('Anton-Regular'), url(font/1Ptgg87LROyAm3Kz-C8CSKlv.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  .rslides {
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    }
+  .carousel-item{
+
+  height: 100%;
+
+  }  
+  
+  .rslides li {
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 0;
+    }
+  
+  .rslides li:first-child {
+    position: relative;
+    display: block;
+    float: left;
+    }
+  
+  .rslides img {
+    display: block;
+    height: auto;
+    float: left;
+    width: 100%;
+    border: 0;
+    }
+    body, html, .main {
+        height: 100%;
+      }
+
+  #loginform{
+   
+   background-color: white ;
+   width: 50%;
+  max-height: 550px;
+   border-radius: 25px;
+   
+
+
+
+
+  } 
+
+  #registerform{
+   
+    background-color: white ;
+    width: 50%;
+   max-height: 550px;
+    border-radius: 25px;
+    display: none
+    
+ 
+ 
+ 
+ 
+   } 
+
+  .input-group-prepend{
+
+    border-radius: 100px;
+    height: 50px;
+
+
+  }  
+  .form-control{
+    border-radius: 25px;
+
+
+
+  }
+  .btn-primary{
+ width: 100%;
+ border-radius: 25px;
+
+
+  }
+  .h50px{
+
+
+    height: 50px !important;
+  }
+  .a-like:hover {
+    text-decoration: underline !important;
+    cursor: pointer;
+    
+  }
+  .cost-button{
+
+
+    color: white;
+    width: 100%;
+    border-radius: 25px;
+    background: #3b679e; /* Old browsers */
+background: -moz-linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg, #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg, #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  }
+  .cost-button-sm{
+
+
+     color: white;
+    width: 50%;
+    border-radius: 75px;
+    background: #3b679e; /* Old browsers */
+background: -moz-linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg, #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg, #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+
+  }
+  .post-button{
+
+    color: white;
+    width: 15%;
+    border-radius: 75px;
+    background: #3b679e; /* Old browsers */
+background: -moz-linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg, #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg, #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=1 ); 
+
+
+  }
+
+  .nav-color{
+    background:bg-dark ;
+     
+    color: white;
+    
+
+}
+.card-text{
+
+  color: white;
+   
+}
+.card {
+
+  background: rgb(46, 44, 44)
+
+}
+
