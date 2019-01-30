@@ -6,10 +6,7 @@ const bcrypt=require('bcrypt')
 router.post('/login',(req,res)=>{
  let type="auth";
  let age= Date.now();
-
-
-
-
+ let token;
 User.findOne({email:req.body.email})
 .then((data)=>
 {
@@ -18,86 +15,68 @@ User.findOne({email:req.body.email})
 
         message:"Wrong email"
     })
-
-
     }
-    
 return Promise.resolve(data);
+})
+.then((data)=>{
+    // console.log("this is the part where the passwords are compared");
+     //console.log(data);
+     return new Promise(function(resolve,reject){
+     bcrypt.compare(req.body.password,data.password,function(err,hash){
+               //  console.log(req.body.password);
+                 //console.log(data.password);
+                 if(err){
+                     reject({
+                         
+                     message:"password is not correct"
+                     })
+                 }
+                 console.log("el passwords sa7");
+                 resolve(data);        
+     })
+ })
+})
+.then((data)=>{
+    user=data;
+    return User.generateToken()
+}) 
+.then((data)=>{
 
 
-}).then((data)=>{
 
-    let token =User.generateToken();
-    token={
-    type:type,
-    age:age,
-    token:token
-
-
-    };
-
-
-   return User.findByIdAndUpdate(data.id,{email:'ayhaga@gmail'})
-    .then((data)=>{
-        console.log("wesel eno update");
-        return Promise.resolve(data)
-    })
-
-}).then((data)=>{
-    console.log("this is the part where the passwords are compared");
-    return new Promise(function(resolve,reject){
-    bcrypt.compare(req.body.password,data.password,function(err,hash){
-        console.log(req.body.password);
-        console.log(data.password);
-        if(err){
-            reject({
+            token=data;
+            tokens={
+                token:data,
+                age:age,
+                type:type
                 
-                 message:"password is not correct"
-            })
-        }
-        console.log("el passwords sa7");
-        resolve(data);
+            };
 
+        
+        
+            //console.log(user);
 
-
-
+    return User.findByIdAndUpdate(user.id,{ $set: { 'tokens':[ tokens] }},{new:true})
     })
-
-
+.then((data)=>{
+                console.log("wesel eno update");
+                console.log(data);
+               // console.log(token);
+            return Promise.resolve(data)
 })
-
-
-
-}).then((data)=>{
-    console.log("wesel eno y-redirect");
-    console.log(data.id);
-return res.json(data);
-
-
-}).catch((err)=>{
-
-return res.status(401).json({
-message:"Error",
-err
-
-
-})
-
-});
-
-
-
-
-});
-
-
-
-
+.then((data)=>{
     
+    res.cookie("auth",data.tokens[0].token); 
+    return res.json(data);
+})
+.catch((err)=>{
+    return res.status(401).json({
+    message:"Error",
+    err
+})
+});
 
 
-
-
-
+});
 
 module.exports=router;

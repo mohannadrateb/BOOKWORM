@@ -8,7 +8,8 @@ const registerRoutes= require('./routes/register');
 const userRoutes= require('./routes/user');
 
 //init app
-const app =express(); 
+const app = express();
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

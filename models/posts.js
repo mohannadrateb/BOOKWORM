@@ -27,6 +27,10 @@ userid:{
 type:String
 
 
+},
+username:{
+
+type:String
 }
 
 })

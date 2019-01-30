@@ -12,23 +12,13 @@
 
 <body>
         <% include ./partial-templates/nav  %>
-        <h1 class="Anton"> Your opinion matters </h1>
-         
-                 
-
-        <div class="form-group">
-                
-                <textarea class="form-control"  id="post-text" placeholder="Type your post here "rows="5" id="post"></textarea>
         
-                <button type="submit" id="post"class="btn post-button  float-right" style="font-size:17px"  >Post </button>
-        </div>
-
 
         <div id="older posts">
 
 
                         
-           <h1 class="Anton"> Latest posts :</h1>
+           <h1 class="Anton"> <%= user[0].firstName%> Latest posts :</h1>
            <% for (var i=0; i< posts.length; i++){ %>
                 <br>
                 <div style="display:flex;justify-content:center;align-items:center;">
@@ -45,11 +35,7 @@
 
 
 
-        <div class="result">
-
-
-
-        </div>
+        
 
                
 
@@ -73,7 +59,7 @@
         <script src='/js/bootstrap.min.js'></script> 
         <script src=https://code.jquery.com/jquery-migrate-3.0.0.min.js></script>
         <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
-        <script src='/scripts/profile.js'></script> 
+        <script src='/scripts/profile.js'></script>
 </body>
 
 </html>
